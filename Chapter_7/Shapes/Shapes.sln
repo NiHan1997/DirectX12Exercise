@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29025.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Shapes", "Shapes\Shapes.vcxproj", "{7EDAB897-D997-4FF5-AE03-2A80543662DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EDAB897-D997-4FF5-AE03-2A80543662DC}.Debug|x64.ActiveCfg = Debug|x64
+		{7EDAB897-D997-4FF5-AE03-2A80543662DC}.Debug|x64.Build.0 = Debug|x64
+		{7EDAB897-D997-4FF5-AE03-2A80543662DC}.Debug|x86.ActiveCfg = Debug|Win32
+		{7EDAB897-D997-4FF5-AE03-2A80543662DC}.Debug|x86.Build.0 = Debug|Win32
+		{7EDAB897-D997-4FF5-AE03-2A80543662DC}.Release|x64.ActiveCfg = Release|x64
+		{7EDAB897-D997-4FF5-AE03-2A80543662DC}.Release|x64.Build.0 = Release|x64
+		{7EDAB897-D997-4FF5-AE03-2A80543662DC}.Release|x86.ActiveCfg = Release|Win32
+		{7EDAB897-D997-4FF5-AE03-2A80543662DC}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B3B6D35-8E0F-4FBB-8D43-97DCAC4B90C6}
+	EndGlobalSection
+EndGlobal
