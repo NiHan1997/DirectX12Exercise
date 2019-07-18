@@ -12,4 +12,5 @@
 
 # Chapter 7
 * 06 Chapter 7 ShapesApp : 原书的基础上还原，使用了Shader Model 5.1 语法，将HLSL中的常量数据封装为结构体。
+* 07 Chapter 7 WavesApp : 原书的基础上还原，波浪方程是此书最大的难点之一。
 	
