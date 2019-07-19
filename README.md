@@ -18,5 +18,7 @@
 
 # Chapter 8
 * 09 Chapter 8 LightWavesApp : 在上一章的基础上添加了基础光照，在像素着色器进行关照计算，顶点着色器计算  
-&nbsp;&nbsp;&nbsp;&nbsp;光照会造成边缘锯齿。。
+&nbsp;&nbsp;&nbsp;&nbsp;光照会造成边缘锯齿。
+* 10 Chapter 8 Exercise_1 : 此题在更新MainPassCB的函数中使用正弦函数让光照的R分量随时间变换即可，同时修改  
+&nbsp;&nbsp;&nbsp;&nbsp;清理后台缓冲区时的默认颜色，让场景更丰富。
 	
