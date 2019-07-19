@@ -21,4 +21,5 @@
 &nbsp;&nbsp;&nbsp;&nbsp;光照会造成边缘锯齿。
 * 10 Chapter 8 Exercise_1 : 此题在更新MainPassCB的函数中使用正弦函数让光照的R分量随时间变换即可，同时修改  
 &nbsp;&nbsp;&nbsp;&nbsp;清理后台缓冲区时的默认颜色，让场景更丰富。
+* 11 Chapter 8 Exercise_3 ：此题使用了三点光源(3个平行光，不是点光源)，后序的代码都是在此光照上的实现。
 	
