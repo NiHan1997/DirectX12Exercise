@@ -15,4 +15,8 @@
 * 07 Chapter 7 WavesApp : 原书的基础上还原，波浪方程是此书最大的难点之一。
 * 08 Chapter 7 Exercise : 此章节练习题比较简单，将两题合并，通过IO加载模型数据，将世界矩阵修改为16个根常量  
 &nbsp;&nbsp;&nbsp;&nbsp;首先修改根签名，然后重构描述符堆相关代码，最后绑定资源也需要更换形式，在HLSL中还需要重构世界矩阵。
+
+# Chapter 8
+* 09 Chapter 8 LightWavesApp : 在上一章的基础上添加了基础光照，在像素着色器进行关照计算，顶点着色器计算  
+&nbsp;&nbsp;&nbsp;&nbsp;光照会造成边缘锯齿。。
 	
