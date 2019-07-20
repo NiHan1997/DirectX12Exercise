@@ -29,4 +29,5 @@
 
 # Chapter 9
 * 14 Chapter 9 CrateApp : 原书基础上还原，添加了纹理的箱子确实会好看很多。
+* 15 Chapter 9 LandWavesApp : 原书基础上还原，添加了纹理，程序逐渐开始有趣，陆地海洋也开始漂亮了。
 	
