@@ -35,4 +35,8 @@
 &nbsp;&nbsp;&nbsp;&nbsp;纹理还是在IA阶段。此题还有一个难点就是纹理旋转，二维旋转矩阵容易求出，就是在考虑旋转中心点时需要多下  
 &nbsp;&nbsp;&nbsp;&nbsp;一点心思，具体可以参考此题的Shader/Default.hlsl，在顶点着色器中实现纹理旋转。
 * 17 Chapter 9 Exercise_6 ：此题就是常规操作，难度不如上一题，当做复习练手即可。
-	
+
+# Chapter 10
+* 18 Chapter 10 LightWavesBlendApp : 在纹理的基础上有实现了混合效果，本章习题也没有什么特别的，实现案例即可。
+
+# Chapter 11
