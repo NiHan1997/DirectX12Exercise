@@ -40,3 +40,5 @@
 * 18 Chapter 10 LightWavesBlendApp : 在纹理的基础上有实现了混合效果，本章习题也没有什么特别的，实现案例即可。
 
 # Chapter 11
+* 19 Chapter 11 StencilApp : 程序从这一章开始就变得有难度了，这里只是书上内容的还原，深度/模板测试相关的  
+&nbsp;&nbsp;&nbsp;&nbsp;许多细节还是需要仔细思考的，否则很可能得不到正确的结果。
