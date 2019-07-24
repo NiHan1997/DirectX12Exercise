@@ -55,3 +55,5 @@
 * 23 Chapter 11 Exercise_10 : 这里可以当做模板缓冲区使用方法的一次巩固，类似的这里还将阴影也反射到了镜子中。  
 
 # Chapter 12
+* 24 Chapter 12 TreeBillboardApp : 使用几何着色器实现广告牌效果，几何着色器最大的特点就是可以拓展和销毁顶点，  
+&nbsp;&nbsp;&nbsp;&nbsp;在本章习题中几何着色器的使用将会十分有趣。
