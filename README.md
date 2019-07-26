@@ -65,3 +65,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;来就是线段。本质上还是几何着色器拓展顶点。
 * 29 Chapter 12 Exercise_5 ：这道题的原理和上一题是一样的，只是输出顶点的位置和数量不同，在这里以三角形的重心  
 &nbsp;&nbsp;&nbsp;&nbsp;坐标输出表面法线。
+
+# Chapter 13
+* 30 Chapter 13 VectorAddApp : 计算着色器的简单应用之一，这里可以发挥想象，观察计算结果。 
