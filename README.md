@@ -68,5 +68,6 @@
 
 # Chapter 13
 * 30 Chapter 13 VectorAddApp : 计算着色器的简单应用之一，这里可以发挥想象，观察计算结果。 
-* 33 Chapter 13 BlurApp :利用计算着色器实现高斯模糊，这里其实严格意义上不能叫做渲染到纹理，叫读取后备缓冲  
+* 31 Chapter 13 BlurApp :利用计算着色器实现高斯模糊，这里其实严格意义上不能叫做渲染到纹理，叫读取后备缓冲  
 &nbsp;&nbsp;&nbsp;&nbsp;更加合适，类似于Unity中的GrabPass，真正意义上的渲染到纹理在后面会加以实现。
+* 32 Chapter 13 Exercise_1 : 此题计算向量的长度，类似于此书的案例。 
