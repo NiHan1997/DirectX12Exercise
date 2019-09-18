@@ -117,7 +117,7 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 	try
 	{
 		ShapesApp theApp(hInstance);
-		if (theApp.Initialize() == false)
+		if (!theApp.Initialize())
 			return 0;
 
 		return theApp.Run();
@@ -128,4 +128,3 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 		return 0;
 	}
 }
-
