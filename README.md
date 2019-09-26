@@ -78,3 +78,4 @@
 * 34 Chapter 13 Exercise_5 ：这里波浪相关算法确实看不懂，抄了一遍，以后看懂了再说，这个版本Bug也很明显。
 * 35 Chapter 13 Exercise_6 ： 边缘检测Sobel算子是经典算法，在这里大体和原书一样，在计算着色器中使用了共享内存  
 &nbsp;&nbsp;&nbsp;&nbsp;对程序进行进行优化，在处理边界和填充共享内存时需要格外小心。
+* 36 Chapter 13 GuassBlur_RenderTexture ：这个程序属于额外练手，结合了渲染到纹理、屏幕后处理实现高斯模糊。

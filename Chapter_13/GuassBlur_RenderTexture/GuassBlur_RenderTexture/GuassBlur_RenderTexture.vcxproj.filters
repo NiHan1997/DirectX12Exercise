@@ -14,10 +14,10 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="着色器">
-      <UniqueIdentifier>{617ee550-e558-4f31-bc12-cf6bc4b76c43}</UniqueIdentifier>
+      <UniqueIdentifier>{15f8e516-9629-4515-8936-ec6ce5fe6522}</UniqueIdentifier>
     </Filter>
     <Filter Include="纹理贴图">
-      <UniqueIdentifier>{5446c14b-4c24-426e-8d22-452506ec0902}</UniqueIdentifier>
+      <UniqueIdentifier>{509436ba-c56a-4758-a4e3-41036333a69d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -48,16 +48,13 @@
     <ClCompile Include="Waves.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="SobelFilter.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SobelApp.cpp">
+    <ClCompile Include="BlurFilter.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="RenderTarget.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="EntryMain.cpp">
+    <ClCompile Include="BlurApp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -95,13 +92,13 @@
     <ClInclude Include="Waves.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="SobelFilter.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SobelApp.h">
+    <ClInclude Include="BlurFilter.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="RenderTarget.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="BlurApp.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
@@ -117,16 +114,16 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Shaders\Blur.hlsl">
+      <Filter>着色器</Filter>
+    </None>
     <None Include="Shaders\Default.hlsl">
       <Filter>着色器</Filter>
     </None>
     <None Include="Shaders\LightingUtil.hlsl">
       <Filter>着色器</Filter>
     </None>
-    <None Include="Shaders\Composite.hlsl">
-      <Filter>着色器</Filter>
-    </None>
-    <None Include="Shaders\Sobel.hlsl">
+    <None Include="Shaders\ShowTexture.hlsl">
       <Filter>着色器</Filter>
     </None>
   </ItemGroup>
