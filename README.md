@@ -83,3 +83,5 @@
 # Chapter 14
 * 37 Chapter 14 BasicTessellation : 曲面细分着色器的初步使用，在原书案例上还原，虽然短期不会使用曲面细分技术，  
 &nbsp;&nbsp;&nbsp;&nbsp;但是总体来讲3A游戏还是用的很多，还是掌握最佳。
+* 38 Chapter 14 BezierPatch ：贝塞尔曲线和贝塞尔曲面可以说是图形学的精髓之一，当然数学原理实现起来也比较困难，  
+&nbsp;&nbsp;&nbsp;&nbsp;但是效果确实非常好的。
