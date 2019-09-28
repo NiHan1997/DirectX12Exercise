@@ -85,3 +85,5 @@
 &nbsp;&nbsp;&nbsp;&nbsp;但是总体来讲3A游戏还是用的很多，还是掌握最佳。
 * 38 Chapter 14 BezierPatch ：贝塞尔曲线和贝塞尔曲面可以说是图形学的精髓之一，当然数学原理实现起来也比较困难，  
 &nbsp;&nbsp;&nbsp;&nbsp;但是效果确实非常好的。
+* 39 Chapter 14 Exercise_1 ：三角形面片曲面细分和四边形曲面细分类似，只是控制点、面片类型有所差异，在处理线性  
+&nbsp;&nbsp;&nbsp;&nbsp;插值也和四边形双线性插值有区别。
