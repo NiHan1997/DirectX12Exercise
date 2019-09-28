@@ -93,10 +93,8 @@
     <None Include="Shaders\LightingUtil.hlsl">
       <Filter>着色器</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Shaders\Tessellation.hlsl">
+    <None Include="Shaders\Tessellation.hlsl">
       <Filter>着色器</Filter>
-    </FxCompile>
+    </None>
   </ItemGroup>
 </Project>

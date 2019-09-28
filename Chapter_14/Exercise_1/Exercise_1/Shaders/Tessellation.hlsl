@@ -162,14 +162,15 @@ struct DomainOut
 };
 
 [domain("tri")]
-DomainOut DS(PatchTess patchTess, float2 uv : SV_DomainLocation, const OutputPatch<HollOut, 3> quad)
+DomainOut DS(PatchTess patchTess, float3 uvw : SV_DomainLocation, const OutputPatch<HollOut, 3> tri)
 {
 	DomainOut dout;
 
-	// 双线性插值.
-	float3 v1 = lerp(quad[0].PosL, quad[1].PosL, uv.x);
-	float3 v2 = lerp(quad[0].PosL, quad[2].PosL, uv.y);
-	float3 p = v1 + v2;
+	// 这里是三角形坐标对应的难点, 可以参考书上附录C3, 这里是重心坐标.
+	float3 v1 = tri[0].PosL * uvw.x;
+	float3 v2 = tri[1].PosL * uvw.y;
+	float3 v3 = tri[2].PosL * uvw.z;
+	float3 p = (v1 + v2 + v3) / 3.0;
 
 	// 计算高度.
 	p.y = 0.3f * (p.z * sin(p.x) + p.x * cos(p.z));
