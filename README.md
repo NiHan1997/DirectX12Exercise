@@ -94,3 +94,6 @@
 &nbsp;&nbsp;&nbsp;&nbsp;两条切线，然后叉积即可得到法线；纹理采样的uv坐标在域着色器中已经提供，传递给像素着色器即可。
 * 43 Chapter 14 Exercise_9 ：三角形贝塞尔曲面需要10个控制点，这里的原理可以参考项目中的 Bézier_triangle.pdf，  
 &nbsp;&nbsp;&nbsp;&nbsp;最难理解的地方就是利用重心坐标公式求出对应的控制点位置，这也是贝塞尔曲线/曲面的魅力。
+
+# Chapter 15
+* 44 Chapter 15 CameraAndDynamicIndexing : 这里终于初步接触了摄像机，至于动态索引就更简单了，理解原理即可，本章并没有难度。
