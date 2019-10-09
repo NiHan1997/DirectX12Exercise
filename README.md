@@ -88,3 +88,7 @@ d3dUtil工具类，内部给出了详细注释。
 # Chapter 15
 * 44 Chapter 15 CameraAndDynamicIndexing : 这里终于初步接触了摄像机，至于动态索引就更简单了，理解原理即可，本章并没有难度。
 * 45 Chapter 15 Exercise_2 ：此题完全没有难度，参考Camera.cpp即可实现。
+
+# Chapter 16
+* 46 Chapter 16 InstancingAndCulling ：本章简述了实例化的原理和操作，实例化是非常实用的操作，在引擎中已经深刻体会到；
+在这里视椎体剔除可以明显提高FPS，而不用等到硬件剔除，是程序优化的实用方法。
