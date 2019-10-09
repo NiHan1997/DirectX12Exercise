@@ -92,3 +92,5 @@ d3dUtil工具类，内部给出了详细注释。
 # Chapter 16
 * 46 Chapter 16 InstancingAndCulling ：本章简述了实例化的原理和操作，实例化是非常实用的操作，在引擎中已经深刻体会到；
 在这里视椎体剔除可以明显提高FPS，而不用等到硬件剔除，是程序优化的实用方法。
+* 47 Chapter 16 Exercise_1 : 在这里包围球更简单，为了不破坏代码框架因此复制了一份Common文件到项目中，重写了d3dUtil中SubmeshGeometry
+的定义，获取包围球的数据更加简单，都不用考虑AABB和OBB的相关问题。
