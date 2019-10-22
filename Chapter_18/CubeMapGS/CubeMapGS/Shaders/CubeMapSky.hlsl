@@ -1,5 +1,5 @@
 ///***********************************************************************************
-/// 通用的不透明物体的着色器.
+/// 绘制反射天空的着色器.
 ///***********************************************************************************
 
 #include "Common.hlsl"
@@ -10,10 +10,20 @@ struct VertexIn
 	float3 PosL : POSITION;
 };
 
+/// 几何着色器输入.
 struct GS_CubeMap_IN
 {
 	float3 PosL : POSITION0;
 	float4 PosW : POSITION1;
+};
+
+/// 几何着色器输出.
+struct GS_CubeMap_OUT
+{
+	float4 PosH	   : SV_POSITION;
+	float3 PosL    : POSITION;
+
+	uint RTIndex : SV_RenderTargetArrayIndex;
 };
 
 /// 顶点着色器.
@@ -26,14 +36,7 @@ GS_CubeMap_IN VS (VertexIn vin)
 	return vout;
 }
 
-struct GS_CubeMap_OUT
-{
-	float4 PosH	   : SV_POSITION;
-	float3 PosL    : POSITION;
-
-	uint RTIndex : SV_RenderTargetArrayIndex;
-};
-
+/// 几何着色器.
 [maxvertexcount(18)]
 void GS_CubeMap(triangle GS_CubeMap_IN input[3],
 	inout TriangleStream<GS_CubeMap_OUT> CubeMapStream)

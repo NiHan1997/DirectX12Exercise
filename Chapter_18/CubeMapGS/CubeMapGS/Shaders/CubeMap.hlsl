@@ -1,5 +1,5 @@
 ///***********************************************************************************
-/// 通用的不透明物体的着色器.
+/// 绘制动态立方体纹理的着色器.
 ///***********************************************************************************
 
 #include "Common.hlsl"
@@ -12,23 +12,23 @@ struct VertexIn
 	float2 TexC    : TEXCOORD0;
 };
 
-/// 顶点着色器输出, 像素着色器输入.
-//struct VertexOut
-//{
-//	//float4 PosH	   : SV_POSITION;
-//	float4 PosW    : POSITION;
-//	float3 NormalW : NORMAL;
-//	float2 TexC    : TEXCOORD0;
-//};
-
+/// 几何着色器输入.
 struct GS_CubeMap_IN
 {
-	//float4 PosH	   : SV_POSITION;
+	float4 PosW    : POSITION;
+	float3 NormalW : NORMAL;
+	float2 TexC    : TEXCOORD0;
+};
+
+/// 几何着色器输出.
+struct GS_CubeMap_OUT
+{
+	float4 PosH	   : SV_POSITION;
 	float4 PosW    : POSITION;
 	float3 NormalW : NORMAL;
 	float2 TexC    : TEXCOORD0;
 
-	//uint RTIndex : SV_RenderTargetArrayIndex;
+	uint RTIndex : SV_RenderTargetArrayIndex;
 };
 
 /// 顶点着色器.
@@ -37,7 +37,6 @@ GS_CubeMap_IN VS (VertexIn vin)
 	GS_CubeMap_IN vout;
 
 	vout.PosW = mul(float4(vin.PosL, 1.0), gObjectConstants.gWorld);
-	//vout.PosH = mul(vout.PosW, gPassConstants.gViewProj);
 
 	// 这里法线变换需要注意, 这里是在等比变换的基础上, 因此不需要使用逆转置矩阵.
 	vout.NormalW = mul(vin.NormalL, (float3x3)gObjectConstants.gWorld);
@@ -49,18 +48,7 @@ GS_CubeMap_IN VS (VertexIn vin)
 	return vout;
 }
 
-
-
-struct GS_CubeMap_OUT
-{
-	float4 PosH	   : SV_POSITION;
-	float4 PosW    : POSITION;
-	float3 NormalW : NORMAL;
-	float2 TexC    : TEXCOORD0;
-
-	uint RTIndex : SV_RenderTargetArrayIndex;
-};
-
+/// 几何着色器.(绘制动态立方体纹理)
 [maxvertexcount(18)]
 void GS_CubeMap(triangle GS_CubeMap_IN input[3],
 	inout TriangleStream<GS_CubeMap_OUT> CubeMapStream)
