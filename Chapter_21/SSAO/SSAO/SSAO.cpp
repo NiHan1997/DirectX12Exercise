@@ -366,6 +366,7 @@ void SSAO::BuildRandomVectorTexture(ID3D12GraphicsCommandList* cmdList)
 		nullptr,
 		IID_PPV_ARGS(mRandomVectorMapUploadBuffer.GetAddressOf())));
 
+	// 在这里使用的普通指针, 需要注意清理.
 	XMCOLOR* initData = new XMCOLOR[256 * 256];
 	for (int i = 0; i < 256; ++i)
 	{
@@ -388,6 +389,9 @@ void SSAO::BuildRandomVectorTexture(ID3D12GraphicsCommandList* cmdList)
 		0, 0, num2DSubresources, &subresourcesData);
 	cmdList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(mRandomVectorMap.Get(),
 		D3D12_RESOURCE_STATE_COPY_DEST, D3D12_RESOURCE_STATE_GENERIC_READ));
+
+	// 避免内存泄漏.
+	delete[] initData;
 }
 
 void SSAO::BuildOffsetVectors()
