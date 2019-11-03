@@ -20,7 +20,7 @@ bool ShadowCubeMapApp::Initialize()
 	mCamera.SetPosition(0.0f, 2.0f, -15.0f);
 	BuildShadowMapCamera(mPointLightPos.x, mPointLightPos.y, mPointLightPos.z);
 
-	mShadowMap = std::make_unique<CubeRenderTarget>(md3dDevice.Get(), ShadowMapSize, ShadowMapSize, mDepthStencilFormat);
+	mShadowMap = std::make_unique<CubeRenderTarget>(md3dDevice.Get(), ShadowMapSize, ShadowMapSize, DXGI_FORMAT_R24G8_TYPELESS);
 
 	LoadTextures();
 	BuildRootSignature();
