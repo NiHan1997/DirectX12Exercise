@@ -50,12 +50,6 @@ float3 BlinnPhong(float3 lightStrength, float3 lightVec, float3 normal, float3 t
 	// BlinnPhong光照模型计算的公式.
 	float3 halfVec = normalize(toEye + lightVec);
 	float roughnessFactor = (m + 8.0f) * pow(max(dot(halfVec, normal), 0.0f), m) / 8.0f;
-	if (roughnessFactor <= 0.3)
-		roughnessFactor = 0.0;
-	else if (roughnessFactor <= 0.5)
-		roughnessFactor = 0.5;
-	else
-		roughnessFactor = 1.0;
 	
 	// 菲涅尔反射计算高光.
 	float3 fresnelFactor = SchlickFresnel(mat.FresnelR0, halfVec, lightVec);
@@ -101,13 +95,6 @@ float3 ComputePointLight(Light L, Material mat, float3 pos, float3 normal, float
 
 	// 兰伯特余弦定理获取光照强度.
 	float ndotl = max(dot(lightVec, normal), 0.0f);
-	if (ndotl <= 0.4)
-		ndotl = 0.0;
-	else if (ndotl <= 0.8)
-		ndotl = 0.5;
-	else
-		ndotl = 1.0;
-
 	float3 lightStrength = L.Strength * ndotl;
 
 	// 计算点光源的衰减..

@@ -321,22 +321,22 @@ void LightShapesApp::BuildShapeGeometry()
 
 	// 几何体数据对应.
 	SubmeshGeometry boxSubmesh;
-	boxSubmesh.IndexCount = box.Indices32.size();
+	boxSubmesh.IndexCount = (UINT)box.Indices32.size();
 	boxSubmesh.StartIndexLocation = boxIndexOffset;
 	boxSubmesh.BaseVertexLocation = boxVertexOffset;
 
 	SubmeshGeometry gridSubmesh;
-	gridSubmesh.IndexCount = grid.Indices32.size();
+	gridSubmesh.IndexCount = (UINT)grid.Indices32.size();
 	gridSubmesh.StartIndexLocation = gridIndexOffset;
 	gridSubmesh.BaseVertexLocation = gridVertexOffset;
 
 	SubmeshGeometry sphereSubmesh;
-	sphereSubmesh.IndexCount = sphere.Indices32.size();
+	sphereSubmesh.IndexCount = (UINT)sphere.Indices32.size();
 	sphereSubmesh.StartIndexLocation = sphereIndexOffset;
 	sphereSubmesh.BaseVertexLocation = sphereVertexOffset;
 
 	SubmeshGeometry cylinderSubmesh;
-	cylinderSubmesh.IndexCount = cylinder.Indices32.size();
+	cylinderSubmesh.IndexCount = (UINT)cylinder.Indices32.size();
 	cylinderSubmesh.StartIndexLocation = cylinderIndexOffset;
 	cylinderSubmesh.BaseVertexLocation = cylinderVertexOffset;
 
@@ -650,7 +650,7 @@ void LightShapesApp::BuildConstantBufferViews()
 			auto objCBAddr = mFrameResources[frameIndex]->ObjectCB->Resource()->GetGPUVirtualAddress();
 			objCBAddr += i * objCBByteSize;
 
-			int heapIndex = mAllRitems.size() * frameIndex + i;
+			int heapIndex = (int)mAllRitems.size() * frameIndex + i;
 			CD3DX12_CPU_DESCRIPTOR_HANDLE handle(mCbvHeap->GetCPUDescriptorHandleForHeapStart());
 			handle.Offset(heapIndex, mCbvSrvUavDescriptorSize);
 
@@ -670,7 +670,7 @@ void LightShapesApp::BuildConstantBufferViews()
 			auto matCBAddr = mFrameResources[frameIndex]->MaterialCB->Resource()->GetGPUVirtualAddress();
 			matCBAddr += i * matCBByteSize;
 
-			int heapIndex = mMaterialCBOffset + mMaterials.size() * frameIndex + i;
+			int heapIndex = mMaterialCBOffset + (int)mMaterials.size() * frameIndex + i;
 			CD3DX12_CPU_DESCRIPTOR_HANDLE handle(mCbvHeap->GetCPUDescriptorHandleForHeapStart());
 			handle.Offset(heapIndex, mCbvSrvUavDescriptorSize);
 
@@ -740,12 +740,12 @@ void LightShapesApp::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const s
 		cmdList->IASetIndexBuffer(&ri->Geo->IndexBufferView());
 		cmdList->IASetPrimitiveTopology(ri->PrimitiveType);
 
-		int objHeapIndex = mCurrFrameResourceIndex * mAllRitems.size() + ri->ObjectCBIndex;
+		int objHeapIndex = mCurrFrameResourceIndex * (int)mAllRitems.size() + ri->ObjectCBIndex;
 		CD3DX12_GPU_DESCRIPTOR_HANDLE objHandle(mCbvHeap->GetGPUDescriptorHandleForHeapStart());
 		objHandle.Offset(objHeapIndex, mCbvSrvUavDescriptorSize);
 		mCommandList->SetGraphicsRootDescriptorTable(0, objHandle);
 
-		int matHeapIndex = mMaterialCBOffset + mCurrFrameResourceIndex * mMaterials.size() + ri->Mat->MatCBIndex;
+		int matHeapIndex = mMaterialCBOffset + mCurrFrameResourceIndex * (int)mMaterials.size() + ri->Mat->MatCBIndex;
 		CD3DX12_GPU_DESCRIPTOR_HANDLE matHandle(mCbvHeap->GetGPUDescriptorHandleForHeapStart());
 		matHandle.Offset(matHeapIndex, mCbvSrvUavDescriptorSize);
 		mCommandList->SetGraphicsRootDescriptorTable(1, matHandle);

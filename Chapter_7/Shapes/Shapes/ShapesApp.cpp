@@ -278,7 +278,7 @@ void ShapesApp::BuildConstantsBuffers()
 			auto objCBAddr = objCB->GetGPUVirtualAddress();
 			objCBAddr += i * objCBByteSize;
 
-			int heapIndex = frameIndex * mAllRitems.size() + i;
+			int heapIndex = frameIndex * (int)mAllRitems.size() + i;
 			auto handle = CD3DX12_CPU_DESCRIPTOR_HANDLE(mCbvHeap->GetCPUDescriptorHandleForHeapStart());
 			handle.Offset(heapIndex, mCbvSrvUavDescriptorSize);
 
@@ -569,7 +569,7 @@ void ShapesApp::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const std::v
 		cmdList->IASetIndexBuffer(&ri->Geo->IndexBufferView());
 		cmdList->IASetPrimitiveTopology(ri->PrimitiveType);
 
-		UINT cbvIndex = mAllRitems.size() * mCurrFrameResouceIndex + ri->ObjectCBIndex;
+		UINT cbvIndex = (UINT)mAllRitems.size() * mCurrFrameResouceIndex + ri->ObjectCBIndex;
 		auto handle = CD3DX12_GPU_DESCRIPTOR_HANDLE(mCbvHeap->GetGPUDescriptorHandleForHeapStart());
 		handle.Offset(cbvIndex, mCbvSrvUavDescriptorSize);
 

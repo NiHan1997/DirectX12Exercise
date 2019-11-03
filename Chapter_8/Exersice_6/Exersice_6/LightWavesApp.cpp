@@ -524,7 +524,7 @@ void LightWavesApp::BuildConstantBufferViews()
 		{
 			objCBAddr += i * objCBByteSize;
 
-			int heapIndex = frameIndex * mAllRitems.size() + i;
+			int heapIndex = frameIndex * (int)mAllRitems.size() + i;
 			CD3DX12_CPU_DESCRIPTOR_HANDLE handle(mCbvHeap->GetCPUDescriptorHandleForHeapStart());
 			handle.Offset(heapIndex, mCbvSrvUavDescriptorSize);
 
@@ -544,7 +544,7 @@ void LightWavesApp::BuildConstantBufferViews()
 		{
 			matCBAddr += i * matCBByteSize;
 
-			int heapIndex = mMaterialCBOffset + frameIndex * mMaterials.size() + i;
+			int heapIndex = mMaterialCBOffset + frameIndex * (int)mMaterials.size() + i;
 			CD3DX12_CPU_DESCRIPTOR_HANDLE handle(mCbvHeap->GetCPUDescriptorHandleForHeapStart());
 			handle.Offset(heapIndex, mCbvSrvUavDescriptorSize);
 
@@ -613,12 +613,12 @@ void LightWavesApp::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const st
 		cmdList->IASetIndexBuffer(&ri->Geo->IndexBufferView());
 		cmdList->IASetPrimitiveTopology(ri->PrimitiveType);
 
-		int objHeapIndex = mCurrFrameResourceIndex * mAllRitems.size() + ri->ObjectCBIndex;
+		int objHeapIndex = mCurrFrameResourceIndex * (int)mAllRitems.size() + ri->ObjectCBIndex;
 		CD3DX12_GPU_DESCRIPTOR_HANDLE objHandle(mCbvHeap->GetGPUDescriptorHandleForHeapStart());
 		objHandle.Offset(objHeapIndex, mCbvSrvUavDescriptorSize);
 		mCommandList->SetGraphicsRootDescriptorTable(0, objHandle);
 
-		int matHeapIndex = mMaterialCBOffset + mCurrFrameResourceIndex * mMaterials.size() + ri->Mat->MatCBIndex;
+		int matHeapIndex = mMaterialCBOffset + mCurrFrameResourceIndex * (int)mMaterials.size() + ri->Mat->MatCBIndex;
 		CD3DX12_GPU_DESCRIPTOR_HANDLE matHandle(mCbvHeap->GetGPUDescriptorHandleForHeapStart());
 		matHandle.Offset(matHeapIndex, mCbvSrvUavDescriptorSize);
 		mCommandList->SetGraphicsRootDescriptorTable(1, matHandle);

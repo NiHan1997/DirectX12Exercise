@@ -111,10 +111,8 @@
     <None Include="Shaders\LightingUtil.hlsl">
       <Filter>着色器</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Shaders\TreeSprite.hlsl">
+    <None Include="Shaders\TreeSprite.hlsl">
       <Filter>着色器</Filter>
-    </FxCompile>
+    </None>
   </ItemGroup>
 </Project>

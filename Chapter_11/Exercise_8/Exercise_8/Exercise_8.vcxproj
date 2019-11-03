@@ -174,17 +174,18 @@
     <Image Include="..\..\..\Textures\WireFence.dds" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Shaders\Color.hlsl">
+    <None Include="Shaders\Color.hlsl">
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PS</EntryPointName>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.1</ShaderModel>
-    </FxCompile>
-    <FxCompile Include="Shaders\Default.hlsl">
+      <FileType>Document</FileType>
+    </None>
+    <None Include="Shaders\Default.hlsl">
       <FileType>Document</FileType>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">PS</EntryPointName>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.1</ShaderModel>
-    </FxCompile>
+    </None>
     <None Include="Shaders\LightingUtil.hlsl">
       <FileType>Document</FileType>
     </None>

@@ -105,13 +105,11 @@
     <None Include="Shaders\LightingUtil.hlsl">
       <Filter>着色器</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Shaders\Default.hlsl">
+    <None Include="Shaders\Color.hlsl">
       <Filter>着色器</Filter>
-    </FxCompile>
-    <FxCompile Include="Shaders\Color.hlsl">
+    </None>
+    <None Include="Shaders\Default.hlsl">
       <Filter>着色器</Filter>
-    </FxCompile>
+    </None>
   </ItemGroup>
 </Project>

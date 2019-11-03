@@ -171,12 +171,12 @@
     <ClInclude Include="Waves.h" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Shaders\Blur.hlsl">
+    <None Include="Shaders\Blur.hlsl">
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">VertBlurCS</EntryPointName>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compute</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.1</ShaderModel>
       <FileType>Document</FileType>
-    </FxCompile>
+    </None>
     <None Include="Shaders\Default.hlsl">
       <FileType>Document</FileType>
     </None>

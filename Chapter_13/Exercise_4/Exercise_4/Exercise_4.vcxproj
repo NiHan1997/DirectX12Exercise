@@ -52,12 +52,12 @@
     <Image Include="..\..\..\Textures\WireFence.dds" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="Shaders\Blur.hlsl">
+    <None Include="Shaders\Blur.hlsl">
       <FileType>Document</FileType>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">HorzBlurCS</EntryPointName>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Compute</ShaderType>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">5.1</ShaderModel>
-    </FxCompile>
+    </None>
     <None Include="Shaders\Default.hlsl">
       <FileType>Document</FileType>
     </None>

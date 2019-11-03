@@ -103,6 +103,9 @@
     <None Include="Shaders\LightingUtil.hlsl">
       <Filter>着色器</Filter>
     </None>
+    <None Include="Shaders\Blur.hlsl">
+      <Filter>着色器</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Image Include="..\..\..\Textures\grass.dds">
@@ -114,10 +117,5 @@
     <Image Include="..\..\..\Textures\WireFence.dds">
       <Filter>纹理贴图</Filter>
     </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <FxCompile Include="Shaders\Blur.hlsl">
-      <Filter>着色器</Filter>
-    </FxCompile>
   </ItemGroup>
 </Project>

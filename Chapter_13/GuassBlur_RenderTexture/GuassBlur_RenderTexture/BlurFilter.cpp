@@ -58,7 +58,7 @@ void BlurFilter::Execute(ID3D12GraphicsCommandList* cmdList, ID3D12RootSignature
 	// 设置根签名和差朗缓冲区数据.
 	cmdList->SetComputeRootSignature(rootSig);
 	cmdList->SetComputeRoot32BitConstant(0, blurRadius, 0);
-	cmdList->SetComputeRoot32BitConstants(0, weights.size(), weights.data(), 1);
+	cmdList->SetComputeRoot32BitConstants(0, (UINT)weights.size(), weights.data(), 1);
 
 	// 资源转化, 将后台缓冲区数据拷贝到blurMap0.
 	cmdList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(input,

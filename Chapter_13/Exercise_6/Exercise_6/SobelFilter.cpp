@@ -65,7 +65,7 @@ void SobelFilter::Execute(ID3D12GraphicsCommandList* cmdList,
 
 	UINT numGroupX = (UINT)ceilf(mWdith / 256.0f);
 	//UINT numGroupY = (UINT)ceilf(mHeight / 16.0f);
-	cmdList->Dispatch(numGroupX, (UINT)ceilf(mHeight), 1);
+	cmdList->Dispatch(numGroupX, mHeight, 1);
 
 	cmdList->ResourceBarrier(1, &CD3DX12_RESOURCE_BARRIER::Transition(mOutput.Get(),
 		D3D12_RESOURCE_STATE_UNORDERED_ACCESS, D3D12_RESOURCE_STATE_GENERIC_READ));
