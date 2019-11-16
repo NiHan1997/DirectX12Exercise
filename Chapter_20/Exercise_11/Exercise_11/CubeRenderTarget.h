@@ -5,7 +5,7 @@
 class CubeRenderTarget
 {
 public:
-	CubeRenderTarget(ID3D12Device* device, UINT width, UINT height, DXGI_FORMAT format);
+	CubeRenderTarget(ID3D12Device* device, UINT width, UINT height);
 	CubeRenderTarget(const CubeRenderTarget& rhs) = delete;
 	CubeRenderTarget& operator=(const CubeRenderTarget& rhs) = delete;
 	~CubeRenderTarget() = default;
