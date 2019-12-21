@@ -89,7 +89,7 @@ void BlurApp::Update(const GameTimer& gt)
 
 	if (mCurrentFence != 0 && mFence->GetCompletedValue() < mCurrFrameResource->Fence)
 	{
-		HANDLE eventHanlde = CreateEventEx(nullptr, false, false, EVENT_ALL_ACCESS);
+		HANDLE eventHanlde = CreateEventEx(nullptr, nullptr, false, EVENT_ALL_ACCESS);
 		ThrowIfFailed(mFence->SetEventOnCompletion(mCurrFrameResource->Fence, eventHanlde));
 		WaitForSingleObject(eventHanlde, INFINITE);
 		CloseHandle(eventHanlde);

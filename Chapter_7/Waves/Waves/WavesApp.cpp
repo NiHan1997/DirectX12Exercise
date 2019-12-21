@@ -54,7 +54,7 @@ void WavesApp::Update(const GameTimer& gt)
 
 	if (mCurrFrameResource->Fence != 0 && mFence->GetCompletedValue() < mCurrFrameResource->Fence)
 	{
-		HANDLE eventHandle = CreateEventEx(nullptr, false, false, EVENT_ALL_ACCESS);
+		HANDLE eventHandle = CreateEventEx(nullptr, nullptr, false, EVENT_ALL_ACCESS);
 		ThrowIfFailed(mFence->SetEventOnCompletion(mCurrFrameResource->Fence, eventHandle));
 		WaitForSingleObject(eventHandle, INFINITE);
 		CloseHandle(eventHandle);
@@ -465,7 +465,7 @@ void WavesApp::BuildConstantBufferViews()
 		{
 			objCBAddr += i * objCBByteSize;
 
-			int heapIndex = frameIndex * mAllRitems.size() + i;
+			int heapIndex = frameIndex * (int)mAllRitems.size() + i;
 			CD3DX12_CPU_DESCRIPTOR_HANDLE handle(mCbvHeap->GetCPUDescriptorHandleForHeapStart());
 			handle.Offset(heapIndex, mCbvSrvUavDescriptorSize);
 
@@ -540,7 +540,7 @@ void WavesApp::DrawRenderItem(ID3D12GraphicsCommandList* cmdList, const std::vec
 		cmdList->IASetIndexBuffer(&ri->Geo->IndexBufferView());
 		cmdList->IASetPrimitiveTopology(ri->PrimitiveType);
 
-		int heapIndex = mCurrFrameResourceIndex * mAllRitems.size() + ri->ObjectCBIndex;
+		int heapIndex = mCurrFrameResourceIndex * (int)mAllRitems.size() + ri->ObjectCBIndex;
 		CD3DX12_GPU_DESCRIPTOR_HANDLE handle(mCbvHeap->GetGPUDescriptorHandleForHeapStart());
 		handle.Offset(heapIndex, mCbvSrvUavDescriptorSize);
 

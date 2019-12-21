@@ -54,7 +54,7 @@ void LightShapesApp::Update(const GameTimer& gt)
 
 	if (mCurrFrameResource->Fence != 0 && mFence->GetCompletedValue() < mCurrFrameResource->Fence)
 	{
-		HANDLE handle = CreateEventEx(nullptr, false, false, EVENT_ALL_ACCESS);
+		HANDLE handle = CreateEventEx(nullptr, nullptr, false, EVENT_ALL_ACCESS);
 		ThrowIfFailed(mFence->SetEventOnCompletion(mCurrFrameResource->Fence, handle));
 		WaitForSingleObject(handle, INFINITE);
 		CloseHandle(handle);

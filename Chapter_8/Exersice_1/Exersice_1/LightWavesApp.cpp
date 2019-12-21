@@ -55,7 +55,7 @@ void LightWavesApp::Update(const GameTimer& gt)
 
 	if (mCurrFrameResource->Fence != 0 && mFence->GetCompletedValue() < mCurrFrameResource->Fence)
 	{
-		HANDLE  eventHandle = CreateEventEx(nullptr, false, false, EVENT_ALL_ACCESS);
+		HANDLE  eventHandle = CreateEventEx(nullptr, nullptr, false, EVENT_ALL_ACCESS);
 		ThrowIfFailed(mFence->SetEventOnCompletion(mCurrFrameResource->Fence, eventHandle));
 		WaitForSingleObject(eventHandle, INFINITE);
 		CloseHandle(eventHandle);
@@ -618,7 +618,7 @@ void LightWavesApp::DrawRenderItems(ID3D12GraphicsCommandList* cmdList, const st
 		objHandle.Offset(objHeapIndex, mCbvSrvUavDescriptorSize);
 		mCommandList->SetGraphicsRootDescriptorTable(0, objHandle);
 
-		int matHeapIndex = mMaterialCBOffset + mCurrFrameResourceIndex * mMaterials.size() + ri->Mat->MatCBIndex;
+		int matHeapIndex = mMaterialCBOffset + mCurrFrameResourceIndex * (int)mMaterials.size() + ri->Mat->MatCBIndex;
 		CD3DX12_GPU_DESCRIPTOR_HANDLE matHandle(mCbvHeap->GetGPUDescriptorHandleForHeapStart());
 		matHandle.Offset(matHeapIndex, mCbvSrvUavDescriptorSize);
 		mCommandList->SetGraphicsRootDescriptorTable(1, matHandle);
