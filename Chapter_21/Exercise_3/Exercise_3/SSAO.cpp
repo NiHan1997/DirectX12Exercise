@@ -304,8 +304,12 @@ void SSAO::BuildResources()
 	texDesc.Width = mRenderTargetWidth;
 	texDesc.Height = mRenderTargetHeight;
 
-	float normalMapClearColor[] = { 0.0f, 0.0f, 1.0f, 0.0f };
-	CD3DX12_CLEAR_VALUE normalMapClearValue(NormalMapFormat, normalMapClearColor);
+	D3D12_CLEAR_VALUE normalMapClearValue;
+	normalMapClearValue.Format = NormalMapFormat;
+	normalMapClearValue.Color[0] = 0.0f;
+	normalMapClearValue.Color[1] = 0.0f;
+	normalMapClearValue.Color[2] = 1.0f;
+	normalMapClearValue.Color[3] = 0.0f;
 
 	ThrowIfFailed(md3dDevice->CreateCommittedResource(
 		&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT),
@@ -323,12 +327,19 @@ void SSAO::BuildResources()
 	texDesc.Height = mRenderTargetHeight;
 	texDesc.Flags = D3D12_RESOURCE_FLAG_ALLOW_UNORDERED_ACCESS | D3D12_RESOURCE_FLAG_ALLOW_RENDER_TARGET;
 
+	D3D12_CLEAR_VALUE ambientClear;
+	ambientClear.Format = AmbientMapFormat;
+	ambientClear.Color[0] = 1.0f;
+	ambientClear.Color[1] = 1.0f;
+	ambientClear.Color[2] = 1.0f;
+	ambientClear.Color[3] = 1.0f;
+
 	ThrowIfFailed(md3dDevice->CreateCommittedResource(
 		&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT),
 		D3D12_HEAP_FLAG_NONE,
 		&texDesc,
 		D3D12_RESOURCE_STATE_GENERIC_READ,
-		nullptr,
+		&ambientClear,
 		IID_PPV_ARGS(mAmbientMap0.GetAddressOf())));
 
 	ThrowIfFailed(md3dDevice->CreateCommittedResource(
@@ -336,7 +347,7 @@ void SSAO::BuildResources()
 		D3D12_HEAP_FLAG_NONE,
 		&texDesc,
 		D3D12_RESOURCE_STATE_GENERIC_READ,
-		nullptr,
+		&ambientClear,
 		IID_PPV_ARGS(mAmbientMap1.GetAddressOf())));
 }
 
