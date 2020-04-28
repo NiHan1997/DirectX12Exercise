@@ -6,8 +6,6 @@ SobelApp::SobelApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 SobelApp::~SobelApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool SobelApp::Initialize()

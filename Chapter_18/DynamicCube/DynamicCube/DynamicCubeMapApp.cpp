@@ -6,8 +6,6 @@ DynamicCubeMapApp::DynamicCubeMapApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 DynamicCubeMapApp::~DynamicCubeMapApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool DynamicCubeMapApp::Initialize()

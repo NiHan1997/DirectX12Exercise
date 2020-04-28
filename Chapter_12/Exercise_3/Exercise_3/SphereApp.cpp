@@ -6,8 +6,6 @@ SphereApp::SphereApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 SphereApp::~SphereApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool SphereApp::Initialize()

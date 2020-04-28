@@ -6,8 +6,6 @@ NormalMapApp::NormalMapApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 NormalMapApp::~NormalMapApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool NormalMapApp::Initialize()

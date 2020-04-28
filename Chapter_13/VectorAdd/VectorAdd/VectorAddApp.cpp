@@ -6,10 +6,6 @@ VectorAddApp::VectorAddApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 VectorAddApp::~VectorAddApp()
 {
-	if (md3dDevice != nullptr)
-	{
-		FlushCommandQueue();
-	}
 }
 
 bool VectorAddApp::Initialize()

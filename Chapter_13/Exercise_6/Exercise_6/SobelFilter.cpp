@@ -112,5 +112,5 @@ void SobelFilter::BuildResources()
 		&texDesc,
 		D3D12_RESOURCE_STATE_GENERIC_READ,
 		nullptr,
-		IID_PPV_ARGS(mOutput.GetAddressOf())));
+		IID_PPV_ARGS(mOutput.ReleaseAndGetAddressOf())));
 }

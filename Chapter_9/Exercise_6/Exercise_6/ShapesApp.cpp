@@ -6,8 +6,6 @@ ShapesApp::ShapesApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 ShapesApp::~ShapesApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool ShapesApp::Initialize()

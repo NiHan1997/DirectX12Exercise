@@ -6,8 +6,6 @@ TreeBillboardsApp::TreeBillboardsApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 TreeBillboardsApp::~TreeBillboardsApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool TreeBillboardsApp::Initialize()

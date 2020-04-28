@@ -6,8 +6,6 @@ CameraApp::CameraApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 CameraApp::~CameraApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool CameraApp::Initialize()

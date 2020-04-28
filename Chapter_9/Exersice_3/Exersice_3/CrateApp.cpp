@@ -6,8 +6,6 @@ CrateApp::CrateApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 CrateApp::~CrateApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool CrateApp::Initialize()

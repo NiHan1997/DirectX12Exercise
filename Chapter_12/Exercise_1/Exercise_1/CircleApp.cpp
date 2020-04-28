@@ -6,8 +6,6 @@ CircleApp::CircleApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 CircleApp::~CircleApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool CircleApp::Initialize()

@@ -8,8 +8,6 @@ SSAOApp::SSAOApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 SSAOApp::~SSAOApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool SSAOApp::Initialize()

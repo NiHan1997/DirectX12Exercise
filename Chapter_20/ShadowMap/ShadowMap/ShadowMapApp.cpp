@@ -9,8 +9,6 @@ ShadowMapApp::ShadowMapApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 ShadowMapApp::~ShadowMapApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool ShadowMapApp::Initialize()

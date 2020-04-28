@@ -6,8 +6,6 @@ PrimitiveApp::PrimitiveApp(HINSTANCE hInstantce) : D3DApp(hInstantce)
 
 PrimitiveApp::~PrimitiveApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool PrimitiveApp::Initialize()
@@ -410,7 +408,7 @@ void PrimitiveApp::BuildPSOs()
 
 	// 绘制三角形的PSO.
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC trianglePsoDesc = pointPsoDesc;
-	trianglePsoDesc.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_LINE;
+	trianglePsoDesc.PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE;
 
 	ThrowIfFailed(md3dDevice->CreateGraphicsPipelineState(&trianglePsoDesc,
 		IID_PPV_ARGS(mPSOs["triangle"].GetAddressOf())));

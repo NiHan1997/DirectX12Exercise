@@ -7,8 +7,6 @@ BezierPatchApp::BezierPatchApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 BezierPatchApp::~BezierPatchApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool BezierPatchApp::Initialize()

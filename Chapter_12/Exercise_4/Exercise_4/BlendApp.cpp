@@ -6,8 +6,6 @@ BlendApp::BlendApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 BlendApp::~BlendApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool BlendApp::Initialize()

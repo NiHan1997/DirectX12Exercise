@@ -6,8 +6,6 @@ WavesApp::WavesApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 WavesApp::~WavesApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool WavesApp::Initialize()

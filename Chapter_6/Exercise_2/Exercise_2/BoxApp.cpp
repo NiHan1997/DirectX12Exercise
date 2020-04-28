@@ -6,8 +6,6 @@ BoxApp::BoxApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 BoxApp::~BoxApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool BoxApp::Initialize()

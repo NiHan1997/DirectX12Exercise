@@ -33,7 +33,7 @@ D3DApp::D3DApp(HINSTANCE hInstance)
 
 D3DApp::~D3DApp()
 {
-	if(md3dDevice != nullptr)
+	if (md3dDevice != nullptr)
 		FlushCommandQueue();
 }
 

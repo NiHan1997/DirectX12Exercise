@@ -6,8 +6,6 @@ ShapesApp::ShapesApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 ShapesApp::~ShapesApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool ShapesApp::Initialize()
@@ -449,7 +447,7 @@ void ShapesApp::BuildSkullGeo()
 	CopyMemory(geo->IndexBufferCPU->GetBufferPointer(), indices.data(), ibByteSize);
 
 	geo->VertexBufferGPU = d3dUtil::CreateDefaultBuffer(md3dDevice.Get(), mCommandList.Get(),
-		vertices.data(), vbByteSize, geo->IndexBufferUploader);
+		vertices.data(), vbByteSize, geo->VertexBufferUploader);
 
 	geo->IndexBufferGPU = d3dUtil::CreateDefaultBuffer(md3dDevice.Get(), mCommandList.Get(),
 		indices.data(), ibByteSize, geo->IndexBufferUploader);

@@ -6,8 +6,6 @@ LightWavesApp::LightWavesApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 LightWavesApp::~LightWavesApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool LightWavesApp::Initialize()

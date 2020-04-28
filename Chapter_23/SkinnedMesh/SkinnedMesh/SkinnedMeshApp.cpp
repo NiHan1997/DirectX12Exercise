@@ -8,8 +8,6 @@ SkinnedMeshApp::SkinnedMeshApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 SkinnedMeshApp::~SkinnedMeshApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool SkinnedMeshApp::Initialize()

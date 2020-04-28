@@ -6,8 +6,6 @@ BilateralBlurApp::BilateralBlurApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 BilateralBlurApp::~BilateralBlurApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool BilateralBlurApp::Initialize()

@@ -117,5 +117,5 @@ void ShadowRenderTarget::BuildResources()
 		&texDesc,
 		D3D12_RESOURCE_STATE_GENERIC_READ,
 		&optClear,
-		IID_PPV_ARGS(mShadowMap.GetAddressOf())));
+		IID_PPV_ARGS(mShadowMap.ReleaseAndGetAddressOf())));
 }

@@ -302,7 +302,7 @@ void SSAO::BuildResources()
 		&texDesc,
 		D3D12_RESOURCE_STATE_GENERIC_READ,
 		&normalMapClearValue,
-		IID_PPV_ARGS(mNormalMap.GetAddressOf())));
+		IID_PPV_ARGS(mNormalMap.ReleaseAndGetAddressOf())));
 
 	///
 	/// SSAOÎÆÀí×ÊÔ´.
@@ -324,7 +324,7 @@ void SSAO::BuildResources()
 		&texDesc,
 		D3D12_RESOURCE_STATE_GENERIC_READ,
 		&ambientClear,
-		IID_PPV_ARGS(mAmbientMap0.GetAddressOf())));
+		IID_PPV_ARGS(mAmbientMap0.ReleaseAndGetAddressOf())));
 
 	ThrowIfFailed(md3dDevice->CreateCommittedResource(
 		&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT),
@@ -332,7 +332,7 @@ void SSAO::BuildResources()
 		&texDesc,
 		D3D12_RESOURCE_STATE_GENERIC_READ,
 		&ambientClear,
-		IID_PPV_ARGS(mAmbientMap1.GetAddressOf())));
+		IID_PPV_ARGS(mAmbientMap1.ReleaseAndGetAddressOf())));
 }
 
 void SSAO::BuildRandomVectorTexture(ID3D12GraphicsCommandList* cmdList)

@@ -6,8 +6,6 @@ BasicTessellationApp::BasicTessellationApp(HINSTANCE hInstance) : D3DApp(hInstan
 
 BasicTessellationApp::~BasicTessellationApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool BasicTessellationApp::Initialize()

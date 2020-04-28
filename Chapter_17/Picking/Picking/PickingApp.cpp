@@ -6,8 +6,6 @@ PickingApp::PickingApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 PickingApp::~PickingApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool PickingApp::Initialize()

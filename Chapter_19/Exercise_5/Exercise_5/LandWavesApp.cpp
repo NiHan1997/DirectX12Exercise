@@ -6,8 +6,6 @@ LandWavesApp::LandWavesApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 LandWavesApp::~LandWavesApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool LandWavesApp::Initialize()

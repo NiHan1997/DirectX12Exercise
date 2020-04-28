@@ -6,8 +6,6 @@ VectorLengthApp::VectorLengthApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 VectorLengthApp::~VectorLengthApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool VectorLengthApp::Initialize()

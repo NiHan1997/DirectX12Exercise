@@ -6,8 +6,7 @@ LightShapesApp::LightShapesApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 LightShapesApp::~LightShapesApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
+
 }
 
 bool LightShapesApp::Initialize()

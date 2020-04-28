@@ -6,8 +6,6 @@ BlurApp::BlurApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 BlurApp::~BlurApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool BlurApp::Initialize()

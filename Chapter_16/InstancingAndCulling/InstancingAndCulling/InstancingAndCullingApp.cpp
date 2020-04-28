@@ -6,8 +6,6 @@ InstancingAndCullingApp::InstancingAndCullingApp(HINSTANCE hInstance) : D3DApp(h
 
 InstancingAndCullingApp::~InstancingAndCullingApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool InstancingAndCullingApp::Initialize()

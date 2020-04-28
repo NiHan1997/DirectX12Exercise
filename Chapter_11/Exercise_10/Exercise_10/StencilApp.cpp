@@ -6,8 +6,6 @@ StencilApp::StencilApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 StencilApp::~StencilApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool StencilApp::Initialize()

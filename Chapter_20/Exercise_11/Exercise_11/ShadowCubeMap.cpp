@@ -6,8 +6,6 @@ ShadowCubeMapApp::ShadowCubeMapApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 ShadowCubeMapApp::~ShadowCubeMapApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool ShadowCubeMapApp::Initialize()

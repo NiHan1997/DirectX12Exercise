@@ -179,7 +179,7 @@ void BlurFilter::BuildResources()
 		&texDesc,
 		D3D12_RESOURCE_STATE_COMMON,
 		nullptr,
-		IID_PPV_ARGS(mBlurMap0.GetAddressOf())));
+		IID_PPV_ARGS(mBlurMap0.ReleaseAndGetAddressOf())));
 
 	ThrowIfFailed(md3dDevice->CreateCommittedResource(
 		&CD3DX12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_DEFAULT),
@@ -187,5 +187,5 @@ void BlurFilter::BuildResources()
 		&texDesc,
 		D3D12_RESOURCE_STATE_COMMON,
 		nullptr,
-		IID_PPV_ARGS(mBlurMap1.GetAddressOf())));
+		IID_PPV_ARGS(mBlurMap1.ReleaseAndGetAddressOf())));
 }

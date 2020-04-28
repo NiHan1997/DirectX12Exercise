@@ -6,8 +6,6 @@ CubeMapApp::CubeMapApp(HINSTANCE hInstance) : D3DApp(hInstance)
 
 CubeMapApp::~CubeMapApp()
 {
-	if (md3dDevice != nullptr)
-		FlushCommandQueue();
 }
 
 bool CubeMapApp::Initialize()

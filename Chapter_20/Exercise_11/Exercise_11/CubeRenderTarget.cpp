@@ -111,5 +111,5 @@ void CubeRenderTarget::BuildResources()
 		&texDesc,
 		D3D12_RESOURCE_STATE_GENERIC_READ,
 		&optClear,
-		IID_PPV_ARGS(mShadowCubeMap.GetAddressOf())));
+		IID_PPV_ARGS(mShadowCubeMap.ReleaseAndGetAddressOf())));
 }
