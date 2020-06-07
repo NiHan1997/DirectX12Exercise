@@ -1,8 +1,8 @@
 #pragma once
-#include "..\..\..\Common\d3dApp.h"
-#include "..\..\..\Common\d3dUtil.h"
-#include "..\..\..\Common\MathHelper.h"
-#include "..\..\..\Common\GeometryGenerator.h"
+#include "Common\d3dApp.h"
+#include "Common\d3dUtil.h"
+#include "Common\MathHelper.h"
+#include "Common\GeometryGenerator.h"
 #include "FrameResource.h"
 #include "GpuWaves.h"
 

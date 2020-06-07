@@ -1,7 +1,7 @@
 #pragma once
 
-#include "..\..\..\Common\d3dUtil.h"
-#include "..\..\..\Common\GameTimer.h"
+#include "Common\d3dUtil.h"
+#include "Common\GameTimer.h"
 
 class GpuWaves
 {
